@@ -1,9 +1,10 @@
-function test_sor(w)
+function test_sor(w, mat_size)
   if nargin == 0
-    w = 1.05;
+    w = 1.5;
   endif
-  
-  mat_size = [5 10 50 100 500 1000 1500 2000 2500 3000];
+  if nargin == 1
+    mat_size = [5 10 50 100 500 1000 1500 2000 2500 3000];
+   endif
   
   for test_size = mat_size
     fprintf("Test size : %i\n", test_size);

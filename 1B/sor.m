@@ -1,6 +1,6 @@
 function x = sor (A, b, w, tol)
   if nargin == 2
-    w = 1;
+    w = 1.5;
     tol = 1e-3;
   endif
   
@@ -25,7 +25,7 @@ function x = sor (A, b, w, tol)
   x = zeros(size(b));
 
   n = size(b,1);
-   for loop = 1:1e5
+   for loop = 1:500
     x_1 = x;
     for i = 1:n
       theta = 0;
