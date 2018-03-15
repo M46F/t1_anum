@@ -1,0 +1,1 @@
+function [x] = least_square_problem_solver_householder(A, b)  [m, n] = size(A);  [Q, R, P] = householder(A);  Rx = Q'*b;  x = R\Rx; x = P*x;
