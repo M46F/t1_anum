@@ -1,5 +1,4 @@
 function [x] = solution_1a(A,b)
-
   [n, m] = size(A);
   if n~= m
     error('matrix A harus merupakan square matrix')

@@ -1,13 +1,22 @@
-function [times_tot, errors, test_case_n, real_res] = tester_a1(start_p, step_p, end_p)
+function [test_case_n, test_case_b, times_tot, errors] = tester_a1(loop_arr)
+
   times_tot = [];
   errors = [];
   test_case_n = [];
-  for i=start_p:step_p:end_p
-    i
-    [t, e, rs] = generate_test_1a(i, round(i/2) - 1);
+  test_case_b = [];
+
+  for i=loop_arr
+    [t, e] = generate_test_1a(i, 1);
     times_tot = [times_tot t];
     errors = [errors, e];
     test_case_n = [test_case_n i];
-    real_res = [real_res rs]
+    test_case_b = [test_case_b 1];
+
+    [t, e] = generate_test_1a(i, round(i/10) - 1);
+    times_tot = [times_tot t];
+    errors = [errors, e];
+    test_case_n = [test_case_n i];
+    test_case_b = [test_case_b (round(i/10) - 1)];
+    i
   end
 end
