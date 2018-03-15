@@ -25,7 +25,7 @@ function x = sor (A, b, w, tol)
   x = zeros(size(b));
 
   n = size(b,1);
-   while true
+   for loop = 1:1e5
     x_1 = x;
     for i = 1:n
       theta = 0;
@@ -41,5 +41,5 @@ function x = sor (A, b, w, tol)
     if (err < tol)
       break
     endif
-  endwhile
+  endfor
 end
