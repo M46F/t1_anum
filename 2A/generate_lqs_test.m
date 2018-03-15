@@ -1,0 +1,1 @@
+function [time, err] = generate_lqs_test(m, n)  mat_mxn = fix(rand(m, n)*30);  b_m = ones(m,1);  tic;  x = least_square_problem_solver_rq(mat_mxn, b_m);  time = toc;  err = norm(b_m - (mat_mxn*x));end
